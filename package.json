@@ -1,0 +1,38 @@
+{
+  "name": "faktura",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "test": "vitest run",
+    "preview": "vite preview --host 127.0.0.1",
+    "format": "prettier --write src vite.config.ts index.html README.md"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.6",
+    "@react-pdf/renderer": "^4.3.1",
+    "buffer": "^6.0.3",
+    "decimal.js": "^10.6.0",
+    "dexie": "^4.2.1",
+    "lucide-react": "^0.468.0",
+    "pdfjs-dist": "^5.4.296",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "fake-indexeddb": "^6.2.2",
+    "prettier": "^3.9.10",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.5",
+    "vitest": "^3.2.4"
+  }
+}
