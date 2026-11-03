@@ -4,10 +4,10 @@ A Czech-first, browser-only invoice app for freelancers and small businesses. Re
 
 ## Run locally
 
-Use Node.js 22.12+ (or a supported newer LTS) and pnpm 11:
+Use Node.js 22.12+ (or a supported newer LTS) and pnpm 9.15.9, as pinned in `package.json`:
 
 ```sh
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
@@ -21,6 +21,10 @@ pnpm format    # format source files
 ```
 
 ## Deploy
+
+Railway/Railpack reads the pnpm version from `package.json`. Keep it at `pnpm@9.15.9`, which supports the existing version 9 lockfile. The root package must remain listed under `packages` in `pnpm-workspace.yaml`. Verify deployment changes with `pnpm install --frozen-lockfile --prefer-offline` followed by `pnpm build`.
+
+On Vercel, use the Vite preset with build command `pnpm build` and output directory `dist`. Leave the install command on automatic detection, or enable Corepack (`ENABLE_EXPERIMENTAL_COREPACK=1`) to use the exact `packageManager` pin. A plain `pnpm install` install-command override can select an older pnpm version in Vercel's build image.
 
 Deploy the contents of `dist/` to any static host, including Netlify, Vercel or Cloudflare Pages. Build command: `pnpm build`; output directory: `dist`. The app uses in-memory screen navigation, so no server route rewrites are necessary. Host the entire build, including `assets/` and `fonts/`, at the site root. For subdirectory hosting, configure Vite's `base` before building.
 

@@ -1,5 +1,5 @@
 {
-  "packageManager": "pnpm@12.14.0",
+  "packageManager": "pnpm@9.15.9",
   "name": "faktura",
   "private": true,
   "version": "1.0.0",
